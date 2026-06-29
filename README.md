@@ -1,7 +1,6 @@
 # Ayam Geprek NaRa
 
-Website pemesanan online untuk usaha kuliner Ayam Geprek NaRa, dibangun 
-sebagai proyek UTS mata kuliah Pemrograman Website E.
+Website pemesanan online untuk usaha kuliner Ayam Geprek NaRa
 
 ## Live Demo
 https://visionary-meringue-013694.netlify.app/
