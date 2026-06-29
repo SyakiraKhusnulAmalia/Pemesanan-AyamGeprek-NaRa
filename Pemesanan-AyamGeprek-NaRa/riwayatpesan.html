@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Riwayat Pesanan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold text-danger">
+
+                <img src="image/Logo.png" width="100" class="me-2">
+                Ayam Geprek NaRa
+            </a>
+
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html">Tentang</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="promo.html">Promo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pesan.html">Pesan</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="riwayatpesan.html">Riwayat Pesan</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Riwayat Pesanan</h2>
+
+    <div class="text-end mb-3">
+        <button class="btn btn-danger btn-sm" onclick="hapusSemua()">Hapus Semua</button>
+    </div>
+
+    <div id="listPesanan"></div>
+
+</div>
+
+<script>
+
+function tampilRiwayat() {
+
+    let riwayat = JSON.parse(localStorage.getItem("riwayat")) || []
+    let output = document.getElementById("listPesanan")
+
+    output.innerHTML = ""
+
+    if (riwayat.length === 0) {
+        output.innerHTML = "<p class='text-center'>Belum ada pesanan</p>"
+        return
+    }
+
+    riwayat.forEach((pesanan, index) => {
+
+        let itemsHTML = ""
+        let total = 0
+
+        for (let item in pesanan.items) {
+            let data = pesanan.items[item]
+            let subtotal = data.qty * data.harga
+            total += subtotal
+
+            itemsHTML += `
+                <tr>
+                    <td>${item}</td>
+                    <td>${data.qty}</td>
+                    <td>Rp ${data.harga}</td>
+                    <td>Rp ${subtotal}</td>
+                </tr>
+            `
+        }
+
+        let badge = pesanan.status === "Selesai"
+            ? "<span class='badge bg-success'>Selesai</span>"
+            : "<span class='badge bg-warning text-dark'>Diproses</span>"
+
+        output.innerHTML += `
+            <div class="card shadow mb-4">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between">
+                        <h5>Pesanan #${index + 1}</h5>
+                        ${badge}
+                    </div>
+
+                    <p><b>Nama:</b> ${pesanan.nama}</p>
+                    <p><b>Alamat:</b> ${pesanan.alamat}</p>
+                    <p><b>No HP:</b> ${pesanan.hp}</p>
+                    <p><b>Tanggal:</b> ${pesanan.tanggal}</p>
+
+                    <table class="table table-bordered mt-3">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Menu</th>
+                                <th>Jumlah</th>
+                                <th>Harga</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${itemsHTML}
+                        </tbody>
+                    </table>
+
+                    <h5 class="text-end">
+                        Total: <span class="text-danger">Rp ${total}</span>
+                    </h5>
+
+                    <div class="text-end mt-3">
+                        <button class="btn btn-success btn-sm" onclick="selesai(${index})">
+                            Tandai Selesai
+                        </button>
+
+                        <button class="btn btn-danger btn-sm" onclick="hapus(${index})">
+                            Hapus
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        `
+    })
+}
+
+function selesai(index) {
+    let riwayat = JSON.parse(localStorage.getItem("riwayat")) || []
+
+    riwayat[index].status = "Selesai"
+
+    localStorage.setItem("riwayat", JSON.stringify(riwayat))
+    tampilRiwayat()
+}
+
+function hapus(index) {
+    let riwayat = JSON.parse(localStorage.getItem("riwayat")) || []
+
+    riwayat.splice(index, 1)
+
+    localStorage.setItem("riwayat", JSON.stringify(riwayat))
+    tampilRiwayat()
+}
+
+function hapusSemua() {
+    if (confirm("Yakin mau hapus semua data?")) {
+        localStorage.removeItem("riwayat")
+        tampilRiwayat()
+    }
+}
+
+document.addEventListener("DOMContentLoaded", tampilRiwayat)
+
+</script>
+<!--Footer-->
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <h5 class="fw-bold">Ayam Geprek NaRa 🔥</h5>
+        <p class="mb-1">Ayam geprek pedas favorit semua orang</p>
+        <small>© 2026 Ayam Geprek NaRa</small>
+    </footer>
+
+</body>
+</html>

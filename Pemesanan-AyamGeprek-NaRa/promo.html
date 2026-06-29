@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Promo - Ayam Geprek NaRa</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold text-danger">
+
+                <img src="image/Logo.png" width="100" class="me-2">
+                Ayam Geprek NaRa
+            </a>
+
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html">Tentang</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="promo.html">Promo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pesan.html">Pesan</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="riwayatpesan.html">Riwayat Pesan</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ================= JUDUL ================= -->
+    <div class="container mt-5 text-center">
+
+        <h2>Promo Spesial NaRa 🔥</h2>
+        <p class="text-muted">Promo hemat & menarik buat kamu</p>
+
+    </div>
+
+    <!-- ================= PROMO LIST ================= -->
+    <div class="container mt-5">
+        <div class="row g-4">
+
+            <!-- PROMO 1 -->
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <img src="image/Geprek original.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Ayam Geprek Original 🔥</h5>
+                        <p class="text-success">Diskon 20%</p>
+                        <p>Rp8.000</p>
+
+                        <div class="qty-control">
+
+                            <button class="btn btn-outline-danger btn-sm"
+                                onclick="tambahQty(this,'Ayam Geprek Original',8000)">
+                                Tambah
+                            </button>
+
+                            <div class="qty-box d-none">
+
+                                <button onclick="kurangQty(this,'Ayam Geprek Original',8000)">-</button>
+
+                                <span class="qty">0</span>
+
+                                <button onclick="tambahQty(this,'Ayam Geprek Original',8000)">+</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMO 2 -->
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <img src="image/Geprek Keju + Est teh.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Paket Hemat Wow 🔥</h5>
+                        <p>Geprek Keju + Es Teh</p>
+                        <p>Rp18.000</p>
+
+                        <div class="qty-control">
+
+                            <button class="btn btn-outline-danger btn-sm"
+                                onclick="tambahQty(this,'Geprek Keju + Es Teh',18000)">
+                                Tambah
+                            </button>
+
+                            <div class="qty-box d-none">
+
+                                <button onclick="kurangQty(this,'Geprek Keju + Es Teh',18000)">-</button>
+
+                                <span class="qty">0</span>
+
+                                <button onclick="tambahQty(this,'Geprek Keju + Es Teh',18000)">+</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMO 3 -->
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <img src="image/Ayam geprek sambal hijau + Es Jeruk.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Paket Hemat Boom 🔥</h5>
+                        <p>Sambal Hijau + Es Jeruk</p>
+                        <p>Rp17.000</p>
+
+                        <div class="qty-control">
+
+                            <button class="btn btn-outline-danger btn-sm"
+                                onclick="tambahQty(this,'Sambal Hijau + Es Jeruk',17000)">
+                                Tambah
+                            </button>
+
+                            <div class="qty-box d-none">
+
+                                <button onclick="kurangQty(this,'Sambal Hijau + Es Jeruk',17000)">-</button>
+
+                                <span class="qty">0</span>
+
+                                <button onclick="tambahQty(this,'Sambal Hijau + Es Jeruk',17000)">+</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!--PROMO 4 -->
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <img src="image/Ayam Saos Lava + Ayam Geprek Sambal Matah.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Paket Hemat Puoll 🔥</h5>
+                        <p>Ayam Geprek Sambal Matah + Ayam Saos Lava</p>
+                        <p>Rp25.000</p>
+
+                        <div class="qty-control">
+
+                            <button class="btn btn-outline-danger btn-sm"
+                                onclick="tambahQty(this,'Ayam Geprek Sambal Matah + Ayam Saos Lava',25000)">
+                                Tambah
+                            </button>
+
+                            <div class="qty-box d-none">
+
+                                <button
+                                    onclick="kurangQty(this,'Ayam Geprek Sambal Matah + Ayam Saos Lava',25000)">-</button>
+
+                                <span class="qty">0</span>
+
+                                <button
+                                    onclick="tambahQty(this,'Ayam Geprek Sambal Matah + Ayam Saos Lava',25000)">+</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMO 5 -->
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <img src="image/Ayam Geprek + Teh Tarik + Tahu Krispi.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Beli 2 Gratis 1 🔥</h5>
+                        <p>Ayam Geprek Original + Teh Tarik (Gratis Tahu Krispi)</p>
+                        <p>Rp23.000</p>
+
+                        <div class="qty-control">
+
+                            <button class="btn btn-outline-danger btn-sm"
+                                onclick="tambahQty(this,'Ayam Geprek Original + Teh Tarik  (Gratis Tahu Krispi)',23000)">
+                                Tambah
+                            </button>
+
+                            <div class="qty-box d-none">
+
+                                <button
+                                    onclick="kurangQty(this,'Ayam Geprek Original + Teh Tarik (Gratis Tahu Krispi)',23000)">-</button>
+
+                                <span class="qty">0</span>
+
+                                <button
+                                    onclick="tambahQty(this,'Ayam Geprek Original + Teh Tarik  (Gratis Tahu Krispi)',23000)">+</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMO 5 -->
+            <div class="col-md-4">
+                <div class="card shadow h-100">
+                    <img src="image/AYAM Geprek Keju + Es Jeruk + Nugget.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5>NaRa Combo 🔥</h5>
+                        <p>Ayam Geprek Keju + Es Jeruk + Nugget</p>
+                        <p>Rp30.000</p>
+
+                        <div class="qty-control">
+
+                            <button class="btn btn-outline-danger btn-sm"
+                                onclick="tambahQty(this,'Ayam Geprek Keju + Es Jeruk + Nugget',30000)">
+                                Tambah
+                            </button>
+
+                            <div class="qty-box d-none">
+
+                                <button
+                                    onclick="kurangQty(this,'Ayam Geprek Keju + Es Jeruk + Nugget',30000)">-</button>
+
+                                <span class="qty">0</span>
+
+                                <button
+                                    onclick="tambahQty(this,'Ayam Geprek Keju + Es Jeruk + Nugget',30000)">+</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= FLOATING CART ================= -->
+    <div id="floatingCart" class="floating-cart d-none">
+
+        <div>
+            <span id="jumlahItem">0 item</span><br>
+            <small>Keranjang Pesanan</small>
+        </div>
+
+        <div class="d-flex gap-2">
+
+            <strong>
+                Rp <span id="totalHarga">0</span>
+            </strong>
+
+            <button class="btn btn-light btn-sm" onclick="window.location.href='pesan.html'">
+                Pesan
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <h5 class="fw-bold">Ayam Geprek NaRa 🔥</h5>
+        <p class="mb-1">Ayam geprek pedas favorit semua orang</p>
+        <small>© 2026 Ayam Geprek NaRa</small>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        let jumlah = 0
+        let total = 0
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.addEventListener("DOMContentLoaded", function () {
+
+                restoreQty()
+                updateCart()
+
+            })
+
+            restoreQty()
+
+            updateCart()
+
+        })
+
+        function tambahQty(btn, nama, harga) {
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+            let parent = btn.closest(".qty-control")
+            let box = parent.querySelector(".qty-box")
+
+            if (box.classList.contains("d-none")) {
+                box.classList.remove("d-none")
+                btn.classList.add("d-none")
+            }
+
+            let qty = box.querySelector(".qty")
+            qty.innerText = parseInt(qty.innerText) + 1 || 1
+
+            if (!cart[nama]) {
+                cart[nama] = {
+                    qty: 1,
+                    harga: harga
+                }
+            } else {
+                cart[nama].qty++
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart))
+
+            updateCart()
+
+        }
+
+        function kurangQty(btn, nama, harga) {
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+            let box = btn.closest(".qty-box")
+            let qty = box.querySelector(".qty")
+
+            let jumlahQty = parseInt(qty.innerText)
+
+            if (jumlahQty <= 1) {
+
+                qty.innerText = 0
+
+                box.classList.add("d-none")
+                box.parentElement.querySelector("button").classList.remove("d-none")
+
+                delete cart[nama]
+
+            } else {
+
+                qty.innerText = jumlahQty - 1
+                cart[nama].qty--
+
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart))
+
+            updateCart()
+
+        }
+
+        function simpanData() {
+
+            localStorage.setItem("jumlah", jumlah)
+            localStorage.setItem("total", total)
+            localStorage.setItem("cart", JSON.stringify(cart))
+
+            updateCart()
+
+        }
+
+        function restoreQty() {
+
+            cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+            document.querySelectorAll(".qty-control").forEach(control => {
+
+                let nama = control.querySelector("button").getAttribute("onclick")
+                nama = nama.split("'")[1]
+
+                if (cart[nama]) {
+
+                    let box = control.querySelector(".qty-box")
+                    let btn = control.querySelector(".btn")
+
+                    box.classList.remove("d-none")
+                    btn.classList.add("d-none")
+
+                    box.querySelector(".qty").innerText = cart[nama].qty
+
+                }
+
+            })
+
+        }
+        function updateCart() {
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+            let jumlah = 0
+            let total = 0
+
+            for (let item in cart) {
+                jumlah += cart[item].qty
+                total += cart[item].qty * cart[item].harga
+            }
+
+            document.getElementById("jumlahItem").innerText = jumlah + " item"
+            document.getElementById("totalHarga").innerText = total
+
+            if (jumlah > 0) {
+                document.getElementById("floatingCart").classList.remove("d-none")
+            } else {
+                document.getElementById("floatingCart").classList.add("d-none")
+            }
+
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

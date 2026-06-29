@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu - Ayam Geprek NaRa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold text-danger">
+
+                <img src="image/Logo.png" width="100" class="me-2">
+                Ayam Geprek NaRa
+            </a>
+
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html">Tentang</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="promo.html">Promo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pesan.html">Pesan</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="riwayatpesan.html">Riwayat Pesan</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- JUDUL -->
+    <div class="container mt-5 text-center">
+
+        <h2>Menu Ayam Geprek NaRa</h2>
+        <p class="text-muted">Pilihan menu ayam geprek pedas favorit</p>
+
+    </div>
+
+
+    <!-- KATEGORI MENU -->
+    <div class="container mt-4 text-center">
+
+        <ul class="nav kategori-menu justify-content-center" role="tablist">
+
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#ayam">
+                    Ayam
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#camilan">
+                    Camilan
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#minuman">
+                    Minuman
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="tab-content mt-4">
+
+        <!-- TAB AYAM -->
+        <div class="tab-pane fade show active" id="ayam">
+
+            <!-- MENU -->
+            <div class="container">
+                <div class="row g-4">
+                    <h4>Menu Ayam</h4>
+
+
+                    <!-- MENU 1 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Geprek original.jpg" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Ayam Geprek Original</h5>
+                                <p>Rp10.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Ayam Geprek Original',10000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Ayam Geprek Original',10000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Ayam Geprek Original',10000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- MENU 2 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Ayam Gepek Keju.jpeg" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Ayam Geprek Keju</h5>
+                                <p>Rp16.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Ayam Geprek Keju',16000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Ayam Geprek Keju',16000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Ayam Geprek Keju',16000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- MENU 3 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Ayam geprek sambal hijau.png" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Ayam Geprek Sambal Hijau</h5>
+                                <p>Rp14.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Ayam Geprek Sambal Hijau',14000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Ayam Geprek Sambal Hijau',14000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Ayam Geprek Sambal Hijau',14000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MENU 4 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Ayam saos lava.png" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Ayam Saos Lava</h5>
+                                <p>Rp14.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Ayam Saos Lava',14000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Ayam Saos Lava',14000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Ayam Saos Lava',14000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MENU 5 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Ayam geprek sambal matah.webp" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Ayam Geprek Sambal Matah</h5>
+                                <p>Rp13.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Ayam Geprek Sambal Matah',13000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Ayam Geprek Sambal Matah',13000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Ayam Geprek Sambal Matah',13000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CAMILAN -->
+        <div class="tab-pane fade" id="camilan">
+
+            <div class="container">
+                <div class="row g-4">
+
+                    <h4>Menu Camilan</h4>
+
+                    <!-- CAMILAN 1 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Kentang Goreng.jpg" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Kentang Goreng</h5>
+                                <p>Rp8.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Kentang Goreng',8000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Kentang Goreng',8000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Kentang Goreng',8000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- CAMILAN 2 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Nugget.jpg" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Nugget</h5>
+                                <p>Rp7.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Nugget',7000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Nugget',7000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Nugget',7000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMILAN 3 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Tahu Krispi.webp" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Tahu Krispi</h5>
+                                <p>Rp7.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Tahu Krispi',7000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Tahu Krispi',7000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Tahu Krispi',7000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMILAN 4 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Jamur Krispi.jfif" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Jamur Krispi</h5>
+                                <p>Rp7.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Jamur Krispi',7000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Jamur Krispi',7000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Jamur Krispi',7000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MINUMAN -->
+        <div class="tab-pane fade" id="minuman">
+
+            <div class="container">
+                <div class="row g-4">
+
+                    <h4>Menu Minuman</h4>
+
+                    <!-- MINUMAN 1 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Es Teh.webp" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Es Teh</h5>
+                                <p>Rp4.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Es Teh',4000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Es Teh',4000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Es Teh',4000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- MINUMAN 2 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Es Jeruk.png" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Es Jeruk</h5>
+                                <p>Rp5.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Es Jeruk',5000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Es Jeruk',5000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Es Jeruk',5000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- MINUMAN 3 -->
+                    <div class="col-md-4">
+                        <div class="card shadow h-100">
+
+                            <img src="image/Teh Tarik.webp" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Teh Tarik</h5>
+                                <p>Rp6.000</p>
+
+                                <div class="qty-control">
+
+                                    <button class="btn btn-outline-danger btn-sm"
+                                        onclick="tambahQty(this,'Teh Tarik',6000)">
+                                        Tambah
+                                    </button>
+
+                                    <div class="qty-box d-none">
+
+                                        <button onclick="kurangQty(this,'Teh Tarik',6000)">-</button>
+
+                                        <span class="qty">0</span>
+
+                                        <button onclick="tambahQty(this,'Teh Tarik',6000)">+</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- FLOATING CART -->
+        <div id="floatingCart" class="floating-cart d-none">
+
+            <div>
+                <span id="jumlahItem">0 item</span><br>
+                <small>Keranjang Pesanan</small>
+            </div>
+
+            <div class="d-flex gap-2">
+
+                <strong>
+                    Rp <span id="totalHarga">0</span>
+                </strong>
+
+                <button class="btn btn-light btn-sm" onclick="window.location.href='pesan.html'">
+                    Pesan
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JAVASCRIPT -->
+        <script>
+
+            let jumlah = 0
+            let total = 0
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+            document.addEventListener("DOMContentLoaded", function () {
+
+                document.addEventListener("DOMContentLoaded", function () {
+
+                    restoreQty()
+                    updateCart()
+
+                })
+
+                restoreQty()
+
+                updateCart()
+
+            })
+
+
+            function tambahQty(btn, nama, harga) {
+
+                let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+                let parent = btn.closest(".qty-control")
+                let box = parent.querySelector(".qty-box")
+
+                if (box.classList.contains("d-none")) {
+                    box.classList.remove("d-none")
+                    btn.classList.add("d-none")
+                }
+
+                let qty = box.querySelector(".qty")
+                qty.innerText = parseInt(qty.innerText) + 1 || 1
+
+                if (!cart[nama]) {
+                    cart[nama] = {
+                        qty: 1,
+                        harga: harga
+                    }
+                } else {
+                    cart[nama].qty++
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                updateCart()
+
+            }
+
+            function kurangQty(btn, nama, harga) {
+
+                let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+                let box = btn.closest(".qty-box")
+                let qty = box.querySelector(".qty")
+
+                let jumlahQty = parseInt(qty.innerText)
+
+                if (jumlahQty <= 1) {
+
+                    qty.innerText = 0
+
+                    box.classList.add("d-none")
+                    box.parentElement.querySelector("button").classList.remove("d-none")
+
+                    delete cart[nama]
+
+                } else {
+
+                    qty.innerText = jumlahQty - 1
+                    cart[nama].qty--
+
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                updateCart()
+
+            }
+
+            function simpanData() {
+
+                localStorage.setItem("jumlah", jumlah)
+                localStorage.setItem("total", total)
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                updateCart()
+
+            }
+
+
+            function restoreQty() {
+
+                cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+                document.querySelectorAll(".qty-control").forEach(control => {
+
+                    let nama = control.querySelector("button").getAttribute("onclick")
+                    nama = nama.split("'")[1]
+
+                    if (cart[nama]) {
+
+                        let box = control.querySelector(".qty-box")
+                        let btn = control.querySelector(".btn")
+
+                        box.classList.remove("d-none")
+                        btn.classList.add("d-none")
+
+                        box.querySelector(".qty").innerText = cart[nama].qty
+
+                    }
+
+                })
+
+            }
+            function updateCart() {
+
+                let cart = JSON.parse(localStorage.getItem("cart")) || {}
+
+                let jumlah = 0
+                let total = 0
+
+                for (let item in cart) {
+                    jumlah += cart[item].qty
+                    total += cart[item].qty * cart[item].harga
+                }
+
+                document.getElementById("jumlahItem").innerText = jumlah + " item"
+                document.getElementById("totalHarga").innerText = total
+
+                if (jumlah > 0) {
+                    document.getElementById("floatingCart").classList.remove("d-none")
+                } else {
+                    document.getElementById("floatingCart").classList.add("d-none")
+                }
+
+            }
+
+        </script>
+
+
+        <!--Footer-->
+        <footer class="bg-dark text-white text-center p-3 mt-5">
+            <h5 class="fw-bold">Ayam Geprek NaRa 🔥</h5>
+            <p class="mb-1">Ayam geprek pedas favorit semua orang</p>
+            <small>© 2026 Ayam Geprek NaRa</small>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

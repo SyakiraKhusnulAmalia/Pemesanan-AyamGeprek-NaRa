@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesanan - Ayam Geprek NaRa</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold text-danger">
+
+                <img src="image/Logo.png" width="100" class="me-2">
+                Ayam Geprek NaRa
+            </a>
+
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html">Tentang</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="promo.html">Promo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pesan.html">Pesan</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="riwayatpesan.html">Riwayat Pesan</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+
+        <h2 class="text-center mb-5">🛒 Halaman Pesanan</h2>
+
+        <div class="row">
+
+            <!-- FORM -->
+            <div class="col-md-4">
+                <div class="card shadow p-3">
+
+                    <h5>Data Pembeli</h5>
+
+                    <input type="text" id="nama" class="form-control mb-2" placeholder="Nama">
+                    <input type="text" id="alamat" class="form-control mb-2" placeholder="Alamat">
+                    <input type="text" id="hp" class="form-control mb-2" placeholder="No HP">
+
+                    <button class="btn btn-danger mt-2 w-100" onclick="pesan()">
+                        Pesan Sekarang
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- TABEL -->
+            <div class="col-md-8">
+                <div class="card shadow p-3">
+
+                    <h5>Detail Pesanan</h5>
+
+                    <table class="table table-bordered mt-3">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Menu</th>
+                                <th>Jumlah</th>
+                                <th>Harga</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelPesanan"></tbody>
+                    </table>
+
+                    <h5 class="text-end">
+                        Total Bayar: <span class="text-danger">Rp <span id="totalBayar">0</span></span>
+                    </h5>
+
+                    <div class="text-end mt-3">
+                        <button class="btn btn-secondary" onclick="resetCart()">Reset</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function tampilPesanan() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || {};
+            let tabel = document.getElementById("tabelPesanan");
+            let total = 0;
+
+            tabel.innerHTML = "";
+
+            if (Object.keys(cart).length === 0) {
+                tabel.innerHTML = "<tr><td colspan='4' class='text-center'>Keranjang masih kosong</td></tr>";
+            } else {
+                for (let item in cart) {
+                    let qty = cart[item].qty;
+                    let harga = cart[item].harga;
+                    let subtotal = qty * harga;
+                    total += subtotal;
+
+                    tabel.innerHTML += `
+                <tr>
+                    <td>${item}</td>
+                    <td>${qty}</td>
+                    <td>Rp ${harga.toLocaleString()}</td>
+                    <td>Rp ${subtotal.toLocaleString()}</td>
+                </tr>
+            `;
+                }
+            }
+
+            document.getElementById("totalBayar").innerText = total.toLocaleString();
+        }
+
+        document.addEventListener("DOMContentLoaded", tampilPesanan);
+
+        function pesan() {
+            let nama = document.getElementById("nama").value;
+            let alamat = document.getElementById("alamat").value;
+            let hp = document.getElementById("hp").value;
+
+            if (!nama || !alamat || !hp) {
+                alert("Harap isi data lengkap!");
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem("cart"));
+
+            if (!cart || Object.keys(cart).length === 0) {
+                alert("Keranjang kosong! Silakan pilih menu dulu di halaman Menu.");
+                return;
+            }
+
+            let riwayat = JSON.parse(localStorage.getItem("riwayat")) || [];
+
+            let pesananBaru = {
+                nama: nama,
+                alamat: alamat,
+                hp: hp,
+                items: cart,
+                tanggal: new Date().toLocaleString("id-ID"),
+                status: "Diproses"
+            };
+
+            riwayat.push(pesananBaru);
+            localStorage.setItem("riwayat", JSON.stringify(riwayat));
+
+            alert("Pesanan berhasil disimpan ke riwayat! 🎉");
+
+            localStorage.removeItem("cart");
+            window.location.href = "riwayatpesan.html";
+        }
+
+    </script>
+
+    <!--Footer-->
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <h5 class="fw-bold">Ayam Geprek NaRa 🔥</h5>
+        <p class="mb-1">Ayam geprek pedas favorit semua orang</p>
+        <small>© 2026 Ayam Geprek NaRa</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
